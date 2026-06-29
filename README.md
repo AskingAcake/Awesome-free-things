@@ -67,7 +67,9 @@ This included alot of good apis, so make sure to check them out, took me a good 
 | 55 | [OpenUV.io](https://www.openuv.io/) | 50/day (free tier) | YES | No | No | Global | Limited | UV + ozone + skin type health recommendations |
 | 56 | [Swellcloud](https://swellcloud.com/) | Free key (exact limit not publicly published; must sign up to see) | YES | Yes | No | Global | Limited | Surf/wave/marine specialist, 0.25 degree resolution |
 | 57 | [AgroMonitoring](https://agromonitoring.com/) | Free tier (exact limit not publicly published; must sign up to see) | YES | Yes | Yes | Global | Limited | Soil + NDVI + satellite + weather combo for agriculture |
-| 58 | [Meteomatics](https://www.meteomatics.com/en/weather-api/) | TRIAL ONLY — 14 days, 500 queries/day, 50/min, 10 parallel | YES | Yes | Yes | Global | Trial only | 1800+ parameters, widest parameter list of this list but not a true generous free tier sadly |
+| 58 | [Meteomatics](https://www.meteomatics.com/en/weather-api/) | TRIAL ONLY, 14 days, 500 queries/day, 50/min, 10 parallel | YES | Yes | Yes | Global | Trial only | 1800+ parameters, widest parameter list of this list but not a true generous free tier sadly |
+
+I added Meteromatics, tho it is trial only, it is still pretty informational, so i still have added it
 
 
 
