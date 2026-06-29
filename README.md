@@ -5,6 +5,73 @@ Some might require an api key, so make sure to include it.
 
 The list doesnt include not so generous weather apis (but i still included those that are atleast worth trying, yet not so generous), the list might also not have free trials whatsoever. But if a category has free trials, i shall let you know in the description
 
+# Navigation 
+Suggested for navigation (originally for TomTom)
+
+| # | API / Service | Free Limit | Key Required? | Card Required? | Category | Commercial OK? | Specialty / Notes |
+|---|---|---|---|---|---|---|---|
+| 1 | [TomTom](https://developer.tomtom.com/) | 50K tiles/day + 2,500 non-tile/day | YES | NO | Routing + Geocoding + Traffic | Yes | 5 req/sec limit; commercial OK even on free plan |
+| 2 | [HERE Maps](https://www.here.com/get-started) | 250K transactions/month | YES | NO | Routing + Geocoding + Traffic + Transit | Yes | Most generous monthly volume of any commercial nav API, scales to 10M before enterprise |
+| 3 | [Mapbox](https://www.mapbox.com/) | 100K directions/month + 100K geocoding/month + 50K map loads/month | YES | NO | Routing + Geocoding + Maps + EV Routing | Yes | Each API has separate free bucket; EV routing available, beware of Search Box keystroke billing |
+| 4 | [OpenRouteService](https://openrouteservice.org/) | 2,500/day (all endpoints combined), 40K/month, 40 concurrent | YES | NO | Routing + Geocoding + Isochrones + Matrix + POI + Elevation | Yes | Best all-in-one single key, fully open source |
+| 5 | [Geoapify](https://www.geoapify.com/) | 3K/day + 90K matrix elements/month | YES | NO | Routing + Geocoding + Isochrones + POI + Map Tiles | Limited | All-in-one on one key, 90K matrix elements/month is 9x more than Google |
+| 6 | [LocationIQ](https://locationiq.com/) | 5K/day | YES | NO | Routing + Geocoding | Limited | OSM-powered, global coverage |
+| 7 | [Stadia Maps](https://stadiamaps.com/) | Perpetual free dev plan | YES | NO (never) | Routing (Valhalla) + Map Tiles + Geocoding | Yes | No credit card ever required, hosts Valhalla + map tiles + geocoding |
+| 8 | [MapQuest](https://developer.mapquest.com/) | 15K/month | YES | NO | Routing + Geocoding | Limited | OSM-based. forgotten but still alive and free |
+| 9 | [FreeRoute](https://api.maps.freeroute.org/) | Free tier (exact requires sign-up) | YES | NO | Routing + Geocoding + Map Tiles | Yes | Drop-in replacement for Google Maps or Mapbox, same SDK shape, 240+ countries |
+| 10 | [GraphHopper](https://www.graphhopper.com/) | Credit-based (non-commercial and not recommended tho) | YES | NO | Routing + Geocoding + Isochrones + Map Matching | Non-commercial | 45+ turn instruction languages; GTFS public transit routing supported |
+| 11 | [Trimble Maps](https://developer.trimblemaps.com/) | Free tier (must register) | YES | NO | Routing (Truck-specific) | Limited | Only free truck-specific routing API; height, weight, hazmat restrictions |
+| 12 | [MapTiler Cloud](https://www.maptiler.com/cloud/) | 100K req/month + 5K sessions/month + 100MB hosting | YES | NO | Maps + Tiles + Geocoding + Routing | Non-commercial on free | Pauses (not charges) when limit hits, includes custom data hosting |
+| 13 | [Jawg Maps](https://www.jawg.io/) | 25K map views/month | YES | NO | Map Tiles + Geocoding + Routing + Elevation | Limited | GDPR-compliant by design, strong choice for EU projects |
+| 14 | [Protomaps](https://protomaps.com/) | 1M/month (soft cap) | YES | NO | Map Tiles only | GitHub Sponsor for commercial | Anti-SaaS design, near-$0 if self-hosted on Cloudflare R2 or S3 |
+| 15 | [Nominatim (OSM)](https://nominatim.org/) | 1 req/sec (public instance) | NO | NO | Geocoding + Reverse Geocoding | Attribution (ODbL) | Keyless, OSM-powered, public instance only for low traffic so dont abuse it |
+| 16 | [OpenCage](https://opencagedata.com/) | 2,500/day, 1 req/sec | YES | NO | Geocoding + Reverse Geocoding | Limited (testing only) | GDPR-compliant and with 40+ SDKs permissive storage terms |
+| 17 | [Geocodio](https://www.geocod.io/) | 2,500/day | YES | NO (never) | Geocoding + Reverse (US + Canada only) | Limited | All features free including batch + Census data appends, US + Canada only |
+| 18 | [CSV2GEO](https://csv2geo.com/) | 3,000/day | YES | NO | Geocoding + Address Validation + Batch | Limited | 18 endpoints on one key; batch + validation + autocomplete + cross-street lookup |
+| 19 | [Photon (Komoot)](https://photon.komoot.io/) | Fair-use (no hard cap; throttled at scale) | NO | NO | Geocoding + Autocomplete | Attribution (ODbL) | Keyless, autocomplete-optimized; hosted by Komoot |
+| 20 | [Photon (GraphHopper hosted)](https://graphhopper.com/) | 2,500/day | YES | NO | Geocoding | Non-commercial | GraphHopper-managed Photon instance; more reliable than Komoot public instance |
+| 21 | [Geocode Earth](https://geocode.earth/) | 1,000/day, 10 req/sec | YES | NO | Geocoding + Autocomplete + Reverse | Yes | Results can be stored permanently, built by original Pelias/Mapzen team |
+| 22 | [US Census Geocoder](https://geocoding.geo.census.gov/) | Unlimited | NO | NO | Geocoding + Batch (US only) | Yes | Official US govt, batch geocoding; US addresses only |
+| 23 | [Apple MapKit JS](https://maps-api.apple.com/) | 250K map views/day + 25K service calls/day | YES (Apple Dev acct) | NO | Maps + Geocoding + Directions | Yes | Apple Maps quality data, massively underused by developers |
+| 24 | [Maps.co](https://geocode.maps.co/) | 25K requests (demo tier) | NO | NO | Geocoding | Limited | Dead simple REST + JSON. good for demos and prototyping ig |
+| 25 | [what3words](https://what3words.com/public-api) | Free tier (sign up to confirm) | YES | NO | Geocoding (3-word address system) | Limited | Converts coordinates to/from 3-word addresses, used by emergency services worldwide |
+| 26 | [BigDataCloud](https://www.bigdatacloud.com/) | Unlimited | NO | NO | Reverse Geocoding only | Yes | Keyless; no signup, no rate limits, zero friction |
+| 27 | [DAWA Geocoder](https://dawadocs.dataforsyningen.dk/) | Unlimited | NO | NO | Geocoding (Denmark only) | Yes | Danish government official address database |
+| 28 | [BAN (Base Adresse Nationale)](https://adresse.data.gouv.fr/api-doc/adresse) | Unlimited | NO | NO | Geocoding (France only) | Yes | French national address database and government-backed |
+| 29 | [Geoclient API (NYC)](https://api.nyc.gov/geoclient/v2/) | Unlimited | YES (free NYC dev acct) | NO | Geocoding (NYC only) | Yes | Official NYC geocoder, authoritative for New York City addresses |
+| 30 | [IPinfo.io](https://ipinfo.io/) | 50K/month | YES | NO | IP Geolocation | Limited | Most generous IP geolocation free tier yet in this list, HTTPS on free tier |
+| 31 | [IPGeolocation.io](https://ipgeolocation.io/) | 30K/month | YES | NO | IP Geolocation | Limited | Includes proxy detection + ASN + currency on free tier |
+| 32 | [ipapi.co](https://ipapi.co/) | 1K/day | NO | NO | IP Geolocation | Limited | Keyless, field-specific queries to reduce payload size |
+| 33 | [ip-api.com](http://ip-api.com/) | 45 req/min | NO | NO | IP Geolocation | Non-commercial only | Keyless, no HTTPS on free tier; non-commercial only |
+| 34 | [FreeIPAPI](https://freeipapi.com/) | 60 req/min | NO | NO | IP Geolocation | Yes | Keyless + commercial OK, batch up to 50 IPs per request |
+| 35 | [USPS Web Tools](https://www.usps.com/business/web-tools-apis/) | Unlimited | YES (free) | NO | Address Validation (US only) | Yes | Official USPS source, authoritative for US delivery points |
+| 36 | [ZipCodeStack](https://zipcodestack.com/) | 100/day | YES | NO | Postal Code Validation + Distance | Limited | Distance calculation between two zip codes in one call |
+| 37 | [Smarty](https://www.smarty.com/) | 250/month | YES | NO | Address Validation (US + 240+ countries) | Limited | No card required; US + international address validation |
+| 38 | [HERE Public Transit API](https://www.here.com/docs/bundle/public-transit-api-developer-guide/) | 250K/month (shared HERE quota) | YES | NO | Transit Routing + Departures + Station Search | Yes | Hidden within HERE free tier, bus/train/metro routing globally |
+| 39 | [MTA API (NYC)](https://api.mta.info/) | Unlimited | NO | NO | Real-time Transit (NYC) | Yes | Official NYC transit; subway, bus, LIRR, Metro-North; GTFS-Realtime |
+| 40 | [CTA API (Chicago)](https://www.transitchicago.com/developers/) | Unlimited | YES (free) | NO | Real-time Transit (Chicago) | Yes | Bus Tracker + Train Tracker + Customer Alerts API |
+| 41 | [Entur (Norway)](https://api.entur.io/) | Unlimited (fair use) | NO | NO | All Transit Modes (Norway) | Yes (NLOD license) | All of Norway's public transport in one GraphQL API, buses, trains, ferries, trams |
+| 42 | [iRail (Belgium)](https://api.irail.be/) | Unlimited | NO | NO | Rail Transit (Belgium) | Yes (Creative Commons) | Belgian rail real-time data, open source |
+| 43 | [OC Transpo (Ottawa)](https://www.octranspo.com/en/plan-your-trip/travel-tools/developers/) | Unlimited | YES (free) | NO | Transit (Ottawa, Canada) | Yes | Bus + transit, next departure by stop, station, name, or number |
+| 44 | [Transitland](https://www.transit.land/) | 6 req/sec; 1K routing/month | YES (free) | NO | Global GTFS + GTFS-Realtime + Routing | Non-commercial | Largest GTFS aggregator on earth, historical feed archive, 99+ countries |
+| 45 | [MBTA V3 API (Boston)](https://www.mbta.com/developers/v3-api) | 1,000 req/min | YES (free) | NO | Real-time Transit (Boston) | Yes (MassDOT license) | Subway, bus, commuter rail, ferry and JSON:API format |
+| 46 | [NPS GTFS](https://www.nps.gov/subjects/developer/gtfs.htm) | Unlimited | NO | NO | Transit (US National Parks) | Yes | Shuttle systems inside US National Parks, Yosemite, Grand Canyon, Zion |
+| 47 | [Mobility Database](https://mobilitydatabase.org/) | Unlimited (open catalog) | YES (free) | NO | Global GTFS + GTFS-Realtime Catalog | Depends on feed | 6,000+ feeds in 99+ countries, every transit agency's data in one place |
+| 48 | [Walk Score Transit API](https://www.walkscore.com/professional/public-transit-api.php) | Free (request access) | YES (free) | NO | Transit Score + Stop Data | Limited (branding req) | Only API giving walkability + transit score per address |
+| 49 | [511 SF Bay](https://511.org/open-data/) | 1 req/min (60 req/hour) | YES (free) | NO | Transit (SF Bay Area) | Yes | All SF Bay Area agencies in one API, GTFS + GTFS-Realtime |
+| 50 | [Malaysia Open API](https://api.data.gov.my/) | Unlimited | NO | NO | Transit (Malaysia) | Yes | KTMB + Prasarana (LRT, MRT, monorail, bus); GTFS-Realtime |
+| 51 | [OneBusAway](https://onebusaway.org/) | Unlimited | YES (free per deployment) | NO | Transit (Multiple US Cities) | Yes (Apache license) | Seattle, Tampa, DC and more; GTFS-Realtime vehicle positions + alerts |
+| 52 | [GBFS Feeds](https://gbfs.org/) | Unlimited (no key by spec) | NO | NO | Bike Share + Scooter + Micromobility | Varies per operator | 1,000+ systems in 45+ countries like Lime, Bird, Citi Bike all publish free feeds |
+| 53 | [CityBikes API](https://api.citybik.es/v2/) | Unlimited | NO | NO | Aggregated Bike Share | Yes | Aggregates hundreds of GBFS systems into one unified keyless REST API |
+| 54 | [Open Topo Data](https://www.opentopodata.org/) | 1K/day, 1 req/sec, 100 locations/req | NO | NO | Elevation | Yes | Compatible with Google Maps Elevation API, multiple datasets for ML Training |
+| 55 | [Open-Elevation](https://open-elevation.com/) | 1K/month hosted | NO | NO | Elevation | Yes (GPLv2) | Open-source Google Elevation API alternative, global coverage |
+| 56 | [AISstream.io](https://aisstream.io/) | Free WebSocket stream | YES | NO | Maritime + Vessel Tracking | Limited | Real-time WebSocket stream of global vessel positions |
+| 57 | [AISHub](https://www.aishub.net/) | Free (contribution-based for full access) | YES | NO | Maritime + Vessel Tracking | Limited | AIS data sharing network, contribute receiver for full access |
+| 58 | [TimeZoneDB](https://timezonedb.com/) | Unlimited (1 req/sec) | YES | NO | Timezone | Non-commercial only | Unlimited queries but 1 req/sec rate limit, non-commercial only on free |
+| 59 | [TimeAPI.io](https://timeapi.io/) | Unlimited | NO | NO | Timezone + Current Time | Yes | Keyless and returns UTC offset, DST status, local time for any IANA timezone |
+| 60 | [Overpass API (OSM)](https://overpass-api.de/) | Fair use (no hard cap) | NO | NO | POI + OSM Data Query | Attribution (ODbL) | Query any OSM data like roads, amenities, buildings, stops for any area on Earth |
+| 61 | [GeoDB Cities](https://rapidapi.com/wirefreethought/api/geodb-cities/) | 86,400/day | YES | NO | City + Region Data | Limited | City population, location, timezone, currency, country info |
+
 # Weather forecasts and data
 This included alot of good apis, so make sure to check them out, took me a good while to find few good ones.
 
@@ -70,6 +137,8 @@ This included alot of good apis, so make sure to check them out, took me a good 
 | 58 | [Meteomatics](https://www.meteomatics.com/en/weather-api/) | TRIAL ONLY, 14 days, 500 queries/day, 50/min, 10 parallel | YES | Yes | Yes | Global | Trial only | 1800+ parameters, widest parameter list of this list but not a true generous free tier sadly |
 
 I added Meteromatics, tho it is trial only, it is still pretty informational, so i still have added it
+
+
 
 
 
