@@ -1,5 +1,5 @@
 ## Awesome-free-things
-Welcome to my repository, where i upload multiple free stuff, that are usually hidden deep in the internet, find what you need!
+Welcome to my repository, where i upload multiple free stuff, that are usually hidden deep in the internet, find what you need! If you want something to be added, like a category or anything, make an suggestion in the discussion.
 
 Some might require an api key, so make sure to include it.
 
